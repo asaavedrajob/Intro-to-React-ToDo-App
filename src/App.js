@@ -1,13 +1,13 @@
-import logo from "./logo.svg"
-import "./App.css"
+// import logo from "./logo.svg"
+import "App.css"
+import Todo from "components/Todo"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hallou Guorld!</p>
-      </header>
+    <div>
+      <h1>React ToDo App</h1>
+      <Todo doneProp="true" textProp="ToDo 1" />
+      <Todo doneProp="false" />
     </div>
   )
 }
