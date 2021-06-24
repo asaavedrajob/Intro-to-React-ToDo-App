@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 export default function Todo({ doneProp, textProp = "Type your ToDo item" }) {
   const donePropAsBoolean = doneProp === "true"
@@ -6,12 +6,24 @@ export default function Todo({ doneProp, textProp = "Type your ToDo item" }) {
   const [done, setDone] = useState(donePropAsBoolean)
   const [text, setText] = useState(textProp)
 
-  function handleSubmit(doneVal, textVal) {
-    console.info("handleSubmit Done:", doneVal)
-    console.info("handleSubmit Text:", textVal)
-  }
+  // (AS) we can use this feature, but the problem is that the item renders without properties and once they are assigned, then the submit is triggered when there is no change on the chks or text inputs
+  // useEffect(
+  //   function () {
+  //     console.info("useEffect: Cambio!!", done)
+  //     handleSubmit()
+  //   },
+  //   [done]
+  // )
 
-  console.log("A:", done, text)
+  // (AS) adding [] as the second param of the feature will allow use to trigger the function only once
+  useEffect(function () {
+    console.log("InitValues:", done, text)
+    // We will consult the DB to get the ToDo existing elements
+  }, [])
+
+  function handleSubmit(doneVal, textVal) {
+    console.log("This is where the submit will happen!", doneVal, textVal)
+  }
 
   return (
     <div className="todo">
