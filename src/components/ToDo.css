@@ -53,3 +53,7 @@
   height: 1.45rem;
   margin-bottom: 0;
 }
+
+.todo-box .done {
+  text-decoration: line-through;
+}
