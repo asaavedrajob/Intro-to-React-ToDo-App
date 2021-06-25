@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import "./ToDo.css"
+import "components/ToDo.css"
 
 export default function ToDo({ doneProp, textProp }) {
   const doneAsBoolean = doneProp === undefined ? false : doneProp

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
-import "./ListOfToDos.css"
+import "components/ListOfToDos.css"
 import getToDos from "services/getToDos"
-import ToDo from "./ToDo"
+import ToDo from "components/ToDo"
 
 export default function ListOfToDos() {
   const [toDos, setToDos] = useState([])
