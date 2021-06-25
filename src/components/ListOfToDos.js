@@ -20,14 +20,22 @@ export default function ListOfToDos() {
   console.info("ListOfToDos:", toDos)
 
   return (
-    <div>
-      {toDos.map(({ key, done, text }) => (
-        <ToDo key={key} doneProp={done} textProp={text} />
-      ))}
-      <hr style={{ width: "50%" }} />
-      <button type="button" onClick={() => newToDo()}>
-        New ToDo
-      </button>
+    <div className="card">
+      <div className="card-image">
+        <img src="/sample-1.jpeg" />
+        <button
+          className="btn-floating halfway-fab waves-effect waves-light red"
+          onClick={() => newToDo()}
+        >
+          <i className="material-icons">add</i>
+        </button>
+      </div>
+      <div className="card-content">
+        <span className="card-title">React ToDo App</span>
+        {toDos.map(({ key, done, text }) => (
+          <ToDo key={key} doneProp={done} textProp={text} />
+        ))}
+      </div>
     </div>
   )
 }
