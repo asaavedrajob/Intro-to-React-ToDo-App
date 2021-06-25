@@ -16,3 +16,40 @@
 .todo .done {
   text-decoration: line-through;
 } */
+
+.display-flex {
+  display: flex;
+}
+
+.width-100 {
+  width: 100%;
+}
+
+.margin-bottom-0 {
+  margin-bottom: 0 !important;
+}
+.margin-bottom-1 {
+  margin-bottom: 0.25rem !important;
+}
+.margin-bottom-2 {
+  margin-bottom: 0.5rem !important;
+}
+.margin-bottom-3 {
+  margin-bottom: 1rem !important;
+}
+.margin-bottom-4 {
+  margin-bottom: 1.5rem !important;
+}
+.margin-bottom-5 {
+  margin-bottom: 3rem !important;
+}
+
+.card-content .input-field,
+.card-content .input-field.inline {
+  margin: 0;
+}
+.card-content .input-field input,
+.card-content .input-field.inline input {
+  height: 1.45rem;
+  margin-bottom: 0;
+}

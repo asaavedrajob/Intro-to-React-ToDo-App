@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="container">
       <div className="row">
-        <div className="col s12 offset-m3 m6">
+        <div className="col m12 offset-l3 l6">
           <ListOfToDos />
         </div>
       </div>

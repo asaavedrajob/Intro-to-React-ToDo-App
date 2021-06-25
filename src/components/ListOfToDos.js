@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import "./ListOfToDos.css"
 import getToDos from "services/getToDos"
 import ToDo from "./ToDo"
 
@@ -32,6 +33,7 @@ export default function ListOfToDos() {
       </div>
       <div className="card-content">
         <span className="card-title">React ToDo App</span>
+        <hr className="margin-bottom-4" />
         {toDos.map(({ key, done, text }) => (
           <ToDo key={key} doneProp={done} textProp={text} />
         ))}

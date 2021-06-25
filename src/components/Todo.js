@@ -35,8 +35,8 @@ export default function ToDo({ doneProp, textProp }) {
   }
 
   return (
-    <div className="todo">
-      <span>
+    <div className="todo-box display-flex margin-bottom-4">
+      <label>
         <input
           type="checkbox"
           checked={done}
@@ -44,6 +44,9 @@ export default function ToDo({ doneProp, textProp }) {
             setDone(!done)
           }}
         />
+        <span></span>
+      </label>
+      <div className="input-field inline width-100">
         <input
           type="text"
           value={text}
@@ -54,7 +57,7 @@ export default function ToDo({ doneProp, textProp }) {
           onKeyPress={() => handleKeyPress()}
           className={done ? "done" : "not-done"}
         />
-      </span>
+      </div>
     </div>
   )
 }
