@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import "components/ToDo.css"
 
-export default function ToDo({ doneProp, textProp }) {
+export default function ToDo({ key, doneProp, textProp }) {
   const doneAsBoolean = doneProp === undefined ? false : doneProp
 
   const [done, setDone] = useState(doneAsBoolean)
@@ -24,14 +24,23 @@ export default function ToDo({ doneProp, textProp }) {
     [text]
   )
 
-  function handleSubmit() {
+  const handleSubmit = () => {
     console.log("This is where the submit will happen!", done, text)
   }
 
-  function handleKeyPress() {
+  const handleKeyPress = () => {
     if (event.key === "Enter") {
       handleSubmit()
     }
+  }
+
+  const handleBlur = () => {
+    setText((prevText) => {
+      console.info({ prevText })
+      // useEffect text will never be trigger do to the text has not changed by
+      // just blur the text input
+      return event.target.value
+    })
   }
 
   return (
@@ -54,7 +63,8 @@ export default function ToDo({ doneProp, textProp }) {
             text === undefined || text === "" ? "Type your ToDo item" : ""
           }
           onChange={(e) => setText(e.target.value)}
-          onKeyPress={() => handleKeyPress()}
+          onBlur={handleBlur}
+          onKeyPress={handleKeyPress}
           className={done ? "done" : "not-done"}
         />
       </div>

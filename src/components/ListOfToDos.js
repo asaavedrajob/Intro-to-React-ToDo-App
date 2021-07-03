@@ -26,7 +26,7 @@ export default function ListOfToDos() {
         <img src="/sample-1.jpeg" />
         <button
           className="btn-floating halfway-fab waves-effect waves-light red"
-          onClick={() => newToDo()}
+          onClick={newToDo}
         >
           <i className="material-icons">add</i>
         </button>
