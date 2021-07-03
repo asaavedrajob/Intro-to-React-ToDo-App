@@ -35,7 +35,7 @@ export default function ListOfToDos() {
         <span className="card-title">React ToDo App (Dev)</span>
         <hr className="margin-bottom-4" />
         {toDos.map(({ key, done, text }) => (
-          <ToDo key={key} doneProp={done} textProp={text} />
+          <ToDo key={key} done={done} text={text} />
         ))}
       </div>
     </div>
